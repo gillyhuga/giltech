@@ -18,12 +18,21 @@
   --mb-5: 2.5rem;
   --mb-6: 3rem;
 }
+html{
+  height: 100%;
+  margin: 0;
+}
 
-body, html {
+body {
   height: 100%;
   margin: 0;
   font-family: "Poppins";
   background-color: var(--backgorund-color);
+}
+
+body.dark {
+  background-color: #1a1a1a;
+  color: red;
 }
 
 header {
@@ -247,3 +256,5 @@ a {
 .category-sidebar {
   color: var(--primary-color);
 }
+
+

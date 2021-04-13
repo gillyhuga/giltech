@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/d0701816e2.js" crossorigin="anonymous"></script>
     <title>Giltech</title>
 </head>
 
@@ -19,9 +20,9 @@
                 <ul class="nav_list">
                     <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
                     <li class="nav_item"><a href="#wrapper" class="nav_link">Blog</a></li>
-                    <li class="nav_item"><a href="profile.php" class="nav_link">Profile</a></li>
+                    <li class="nav_item"><a href="profile.html" class="nav_link">Profile</a></li>
                 </ul>
-            </div>
+            </div>         
         </nav>
 
     </header>
@@ -35,6 +36,10 @@
     <section id="wrapper">
         <aside id="left" class="container">
             <article class="all-content">
+                <div class="toggle">
+                    <input type="checkbox" class="checkbox" id="chk" />
+                    <label class="label" for="chk">Turn On Dark Mode</label>
+                </div>
                 <h1>Kategori</h1>
                 <article class="content  category-sidebar">
                     <li><a class="category-sidebar" href="#computer-content">Computer</a></li>
@@ -172,7 +177,8 @@
     </footer>
 
 </body>
-
 <script src="assets/js/main.js"></script>
+<script src="assets/js/darkmode.js"></script>
+
 
 </html>
