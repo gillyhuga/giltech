@@ -5,10 +5,10 @@ function switchMode() {
   element.classList.toggle("dark-mode");
   icon.classList.toggle("fa-sun");
 
-  if (element.classList.contains('dark-mode')) { //when the body has the class 'dark' currently
-    localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
+  if (element.classList.contains('dark-mode')) { 
+    localStorage.setItem('darkMode', 'enabled');
   } else {
-    localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
+    localStorage.setItem('darkMode', 'disabled');
   }
 }
 
