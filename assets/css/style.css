@@ -4,8 +4,19 @@
   --primary-color: #F60000;
   --secondary-color: #FFFFFF;
   --footer-color: #292c2f;
+  --navbar-color:#000000;
+  --white-color: #FFFFFF;
+  --text-button: #000000;
 }
-
+.dark-mode{
+  --backgorund-color: #15202b;
+  --primary-color: #F60000;
+  --secondary-color: #192734;
+  --footer-color: #192734;
+  --navbar-color:#192734;
+  --text-button: #FFFFFF;
+    color: #ffff;
+}
 :root {
   --font-semi: 600;
 }
@@ -30,10 +41,6 @@ body {
   background-color: var(--backgorund-color);
 }
 
-body.dark {
-  background-color: #1a1a1a;
-  color: red;
-}
 
 header {
   font-family: "Poppins";
@@ -49,7 +56,7 @@ section {
 }
 
 strong {
-  color: var(--primary-color);
+  color: var(--white-color);
 }
 
 ul, li {
@@ -85,14 +92,14 @@ a {
   padding: var(--mb-2);
   position: fixed;
   width: 100%;
-  background: black;
+  background: var(--navbar-color);
   top: 0;
 }
 
 .hero-text {
   position: absolute;
   top: 40%;
-  color: var(--secondary-color);
+  color: var(--white-color);
 }
 
 .container {
@@ -111,7 +118,6 @@ a {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
-  position: fixed;
   z-index: 100;
 }
 
@@ -125,12 +131,15 @@ a {
   padding-top: 0;
 }
 
+
+
+
 .nav_item {
   padding-left: var(--mb-5);
 }
 
 .nav_link {
-  color: var(--secondary-color);
+  color: var(--white-color);
 }
 
 .search {
@@ -146,6 +155,7 @@ a {
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
+  background-color: var(--secondary-color);
 }
 
 .searchButton {
@@ -238,7 +248,7 @@ a {
 
 .button:hover {
   background-color: var(--backgorund-color);
-  color: black;
+  color: var(--text-button);
 }
 
 .image-content {
