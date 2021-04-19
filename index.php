@@ -19,8 +19,8 @@
             <div>
                 <ul class="nav_list">
                     <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
-                    <li class="nav_item"><a href="profile.html" class="nav_link">Profile</a></li>
-                    <li class="nav_item"><a href="listapp.html" class="nav_link">List App</a></li>
+                    <li class="nav_item"><a href="profile.php" class="nav_link">Profile</a></li>
+                    <li class="nav_item"><a href="listapp.php" class="nav_link">List App</a></li>
                     <li class="nav_item"><button class="button fa fa-moon" id="btn-dark" onclick="switchMode()"></button></li>
                 </ul>
             </div>
