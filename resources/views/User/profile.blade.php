@@ -1,41 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('User.layouts.master')
+@section('title', 'Profile')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/d0701816e2.js" crossorigin="anonymous"></script>
-    <title>Giltech</title>
-</head>
-
-<body>
-    <header>
-        <nav class="nav container">
-            <div>
-                <a href="/" class="nav_logo ">Giltech.</a>
-            </div>
-
-            <div>
-                <ul class="nav_list">
-                    <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
-                    <li class="nav_item"><a href="profile.php" class="nav_link">Profile</a></li>
-                    <li class="nav_item"><a href="listapp.php" class="nav_link">List App</a></li>
-                    <li class="nav_item"><button class="button fa fa-moon" onclick="switchMode()" id="btn-dark"> </button></li>
-                </ul>
-            </div>
-        </nav>
-
-    </header>
+@section('hero') 
     <div class="hero-image_profile">
         <div class="hero-text container">
             <h1>Hello My Name is <strong>Gilly</strong> <br> it's Really Nice to Meet You.</h1>
         </div>
     </div>
-    <div class="header-bg">&nbsp;</div>
-    <section id="wrapper">
-        <aside id="left" class="container">
+@endsection  
+
+ @section('photo-profile')   
+ <aside id="left" class="container">
             <article class="all-content">
                 <h1>My Profile</h1>
                 <article class="content  category-sidebar">
@@ -44,11 +19,12 @@
                     </div>
                 </article>
             </article>
-            </article>
-            </article>
+    
 
         </aside>
-        <div id="mid" class="container">
+@endsection
+
+@section('profile')  
             <article class="all-content">
                 <h1>a bit about me:</h1>
                 <article class="content">
@@ -85,19 +61,4 @@
                 </article>
 
             </article>
-
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div>
-            <p> &copy; Gilly Huga Anargya 2021</p>
-        </div>
-    </footer>
-
-</body>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/darkmode.js"></script>
-
-</html>
+@endsection
