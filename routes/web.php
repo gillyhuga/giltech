@@ -14,13 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('User/index');
+    return view('user/index');
 });
 
 Route::get('/profile', function () {
-    return view('User/profile');
+    return view('user/profile');
 });
 
 Route::get('/listapp', function () {
-    return view('User/listapp');
+    return view('user/listapp');
+});
+
+Route::get('/admin', function () {
+    return view('admin/dashboard');
+});
+
+Route::get('/admin/authors', function () {
+    return view('admin/authors');
+});
+Route::get('/admin/news', function () {
+    return view('admin/news');
 });
