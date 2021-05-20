@@ -31,20 +31,23 @@
 @endsection
 
 @section('content')
+            
             <article class="all-content">
-                <h1>Computer</h1>
+                <h1>Berita Hari Ini</h1>
+                @foreach ($news as $content)
+                @if($content->is_published == 1)
                 <article class="content">
-                    <h2>Update Windows 10 di April 2018; Apa Saja yang Baru?</h2>
-                    <p class="author">By Jimmy Ahyari / June 16, 2020</p>
+                    <h2>{{ $content->title }}</h2>
+                    <p class="author">By {{ $content->authors()->first()->name}} / {{ $content->created_at }}</p>
                     <img class="image-content" src="assets/images/computer-1.jpg">
-                    <p>Dengan Windows 10, Microsoft telah memfokuskan diri ­untuk menghadirkan sistem operasi yang
-                        paling modern dan paling aman. Sejak peluncuran awal, Microsoft telah menghadirkan dua
-                        pembaharuan (updates) dengan fitur-fitur yang dirancang untuk menghadirkan kemampuan
-                        kreativitas di dalam diri kita masing-masing.</p>
-                    <a href="https://teknologi.info/304106/update-windows-10-april-2018/"
+                    <p>{{ $content->content }}</p>
+                    <a href="#"
                         class="button">Selengkapnya</a>
                 </article>
+                @endif
+                @endforeach
             </article>
+
 @endsection
 
 @section('sidebar-right')

@@ -34,7 +34,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach ($news  as $news)
+                                        @foreach ($news as $news)
                                             <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $news->title }}</td>

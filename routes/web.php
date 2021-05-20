@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,13 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-Route::get('/', function () {
-    return view('user/index');
-    })->name('index');
+// Route::get('/', function () {
+//     return view('user/index');
+//     })->name('index');
+    Route::resource('/', HomeController::class);
     Route::resource('admin/authors', AuthorController::class);
     Route::resource('admin/news', NewsController::class);
+    Route::resource('admin', DashboardController::class);
 
 // Route::get('/profile', function () {
 //     return view('user/profile');
@@ -29,9 +33,9 @@ Route::get('/', function () {
 //     return view('user/listapp');
 // });
 
-Route::get('/admin', function () {
-    return view('admin/dashboard');
-});
+// Route::get('/admin', function () {
+//     return view('admin/dashboard');
+// });
 
 // Route::get('/admin/authors', function () {
 //     return view('admin/authors');

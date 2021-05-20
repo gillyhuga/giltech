@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::with('authors')->get();	
+        $news = News::all();	
         return view('admin/news', compact('news'));
     }
 

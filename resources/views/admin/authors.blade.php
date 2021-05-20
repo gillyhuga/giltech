@@ -37,7 +37,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $author->name }}</td>
                                             <td>{{ $author->picture }}</td>
-                                            <td>{{ $author->products->count() }}</td>
+                                            <td>{{ $author->news->count() }}</td>
                                             <td>{{ $author->created_at }}</td>
                                             <td>
                                             <a href="{{ route('authors.edit', [$author->id]) }}"
