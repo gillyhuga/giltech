@@ -28,7 +28,7 @@
                                                 <th>Picture</th>
                                                 <th>Content</th>
                                                 <th>Published</th>
-                                                <th>Author</th>
+                                                <th>Authors</th>
                                                 <th>Date Created</th>
                                                 <th>Action</th>
                                             </tr>

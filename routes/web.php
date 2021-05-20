@@ -35,3 +35,14 @@ Route::get('/admin/authors', function () {
 Route::get('/admin/news', function () {
     return view('admin/news');
 });
+Route::get('/p', function () {
+    \App\Authors::create([
+        'name' => 'Gilly'
+    ]);    
+    \App\Authors::create([
+        'name' => 'BOB'
+    ]); 
+    \App\Authors::create([
+        'name' => 'ss'
+    ]);
+});
