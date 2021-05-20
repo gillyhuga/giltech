@@ -58,7 +58,8 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $authors = Author::findOrFail($id);
+        return view('admin/edit', compact('authors'));
     }
 
     /**
@@ -70,7 +71,20 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'picture' => 'required|max:250',
+            'address' => 'required|max:250',
+            ]);
+            Author::findOrFail($id)->update([
+            'name' => $request->name,
+            'picture' => $request->picture,
+            'address' => $request->address,
+            ]);
+        $model = Author::find($id);
+        $model->touch();
+        return redirect()->route('authors.index');
+        
     }
 
     /**

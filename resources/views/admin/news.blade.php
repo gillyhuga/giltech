@@ -47,7 +47,7 @@
                                             <span class="badge badge-success">Success</span>
                                             @endif
                                             </td>
-                                            <td>{{ $news->authors()->first()->name}}</td>
+                                            <td>{{ $news->authors->first()->name}}</td>
                                             <td>{{ $news->created_at }}</td>
                                             <td>
                                             <a href="{{ route('news.edit', [$news->id]) }}"

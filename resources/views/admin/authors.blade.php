@@ -37,8 +37,11 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $author->name }}</td>
                                             <td>{{ $author->picture }}</td>
-                                            <td>{{ $author->news->count() }}</td>
-                                            <td>{{ $author->created_at }}</td>
+                                            
+                                            <td>{{ $author->news->where('is_published','1')->count() }}</td>
+                                           
+                                            <td>{{ $author->updated_at }}</td>
+                                            
                                             <td>
                                             <a href="{{ route('authors.edit', [$author->id]) }}"
                                             class="btn btn-warning float-left m-1">Edit</a>
