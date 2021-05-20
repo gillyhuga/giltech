@@ -11,6 +11,6 @@ class News extends Model
     protected $guarded = [];
 
     public function authors(){
-        return $this->belongsToMany(Authors::class);
+        return $this->belongsToMany('App\Models\Author');
 }
 }

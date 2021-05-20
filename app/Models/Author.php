@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Authors extends Model
+class Author extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
     public function news(){
-        return $this->belongsToMany(News::class);
+        return $this->belongsToMany('App\Models\News');
 }
 }

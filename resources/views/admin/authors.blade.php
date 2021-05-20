@@ -11,7 +11,7 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <button type="button" class="btn btn-success">
+                            <button href="{{route('authors.create')}}" type="button" class="btn btn-success">
                             <i class="fas fa-plus"></i>
                                 Tambahkan Data
                             </button>
@@ -32,17 +32,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($authors as $author)
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                                </td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $author->name }}</td>
+                                            <td>{{ $author->picture }}</td>
+                                            <td>{{ $author->products->count() }}</td>
+                                            <td>{{ $author->created_at }}</td>
+                                            <td>
+                                            <a href="{{ route('authors.edit', [$author->id]) }}"
+                                            class="btn btn-warning float-left m-1">Edit</a>
+                                            <form class="float-left m-1"
+                                            action="{{ route('authors.destroy', [$author->id]) }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Delete</a>
+                                            </form>
+                                            </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

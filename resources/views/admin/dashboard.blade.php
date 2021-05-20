@@ -13,7 +13,9 @@
                                 <div class="card bg-dark text-white mb-4">
                                 <div class="card-header">Authors</div>
                                 <div class="card-body">
-                                    <h1 class="card-title">15</h1>
+                                    <h1 class="card-title">
+                                    {{ $authors->count() }}
+                                    </h1>
                                 </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
@@ -25,7 +27,9 @@
                                 <div class="card bg-dark text-white mb-4">
                                 <div class="card-header">News</div>
                                 <div class="card-body">
-                                    <h1 class="card-title">6</h1>
+                                    <h1 class="card-title">
+                                    {{ $news->count() }}
+                                    </h1>
                                 </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>

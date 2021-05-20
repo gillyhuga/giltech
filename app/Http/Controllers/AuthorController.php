@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Author;
 
 use Illuminate\Http\Request;
 
-class AuthorsController extends Controller
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-        //
+        $authors = Author::all();
+        return view('admin/authors', compact('authors'));
     }
 
     /**
@@ -79,6 +81,7 @@ class AuthorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Author::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

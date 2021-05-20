@@ -34,21 +34,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($news  as $news)
                                             <tr>
-                                                <td>1</td>
-                                                <td>Tiger Nixon</td>
-                                                <td>Foto</td>
-                                                <td>
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                                                </td>
-                                                <td><span class="badge badge-success">Success</span></td>
-                                                <td>Gilly</td>
-                                                <td>2011/04/25</td>
-                                                <td>
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                                </td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $news->title }}</td>
+                                            <td>{{ $news->picture }}</td>
+                                            <td>{{ $news->content }}</td>
+                                            <td>
+                                            @if($news->is_published == 0)
+                                            <span class="badge badge-danger">Belum</span>
+                                            @else
+                                            <span class="badge badge-success">Success</span>
+                                            @endif
+                                            </td>
+                                            <td>{{ $news->authors()->first()->name}}</td>
+                                            <td>{{ $news->created_at }}</td>
+                                            <td>
+                                            <a href="{{ route('news.edit', [$news->id]) }}"
+                                            class="btn btn-warning float-left m-1">Edit</a>
+                                            <form class="float-left m-1"
+                                            action="{{ route('news.destroy', [$news->id]) }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Delete</a>
+                                            </form>
+                                            </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
