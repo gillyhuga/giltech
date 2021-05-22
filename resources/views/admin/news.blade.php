@@ -11,10 +11,10 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <button type="button" class="btn btn-success">
+                            <a href="{{route('news.create')}}" type="button" class="btn btn-success">
                             <i class="fas fa-plus"></i>
                                 Tambahkan Data
-                            </button>
+                            </a>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -47,7 +47,11 @@
                                             <span class="badge badge-success">Success</span>
                                             @endif
                                             </td>
-                                            <td>{{ $news->authors->first()->name}}</td>
+                                            <td>
+                                             @foreach ($news->authors as $authors)
+                                             {{ $authors->name}}
+                                             @endforeach
+                                            </td>
                                             <td>{{ $news->created_at }}</td>
                                             <td>
                                             <a href="{{ route('news.edit', [$news->id]) }}"

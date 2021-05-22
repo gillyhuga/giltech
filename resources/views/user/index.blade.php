@@ -31,7 +31,6 @@
 @endsection
 
 @section('content')
-            
             <article class="all-content">
                 <h1>Berita Hari Ini</h1>
                 @foreach ($news as $content)
@@ -47,7 +46,6 @@
                 @endif
                 @endforeach
             </article>
-
 @endsection
 
 @section('sidebar-right')

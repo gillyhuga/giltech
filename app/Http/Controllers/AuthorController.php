@@ -14,7 +14,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::all();
+        // return Author::with('news')->get();
+        $authors = Author::with('news')->get();	
         return view('admin/authors', compact('authors'));
     }
 
@@ -25,7 +26,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/createAuthor');
     }
 
     /**
@@ -36,7 +37,19 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:100',
+            'picture' => 'required|max:2048',
+            'address' => 'required|max:250',
+            ]);
+            $data =Author::create([
+                'name' => $request->name,
+                'picture' => $request->picture,
+                'address' => $request->address,
+                ]);
+            // $data->news()->attach($request->input('news_id'));
+            return redirect()->route('authors.index');
+        
     }
 
     /**
@@ -59,7 +72,7 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $authors = Author::findOrFail($id);
-        return view('admin/edit', compact('authors'));
+        return view('admin/editAuthor', compact('authors'));
     }
 
     /**
@@ -73,7 +86,7 @@ class AuthorController extends Controller
     {
         $request->validate([
             'name' => 'required|max:100',
-            'picture' => 'required|max:250',
+            'picture' => 'required|max:2048',
             'address' => 'required|max:250',
             ]);
             Author::findOrFail($id)->update([
@@ -81,9 +94,9 @@ class AuthorController extends Controller
             'picture' => $request->picture,
             'address' => $request->address,
             ]);
-        $model = Author::find($id);
-        $model->touch();
-        return redirect()->route('authors.index');
+            $model = Author::find($id);
+            $model->touch();
+            return redirect()->route('authors.index');
         
     }
 

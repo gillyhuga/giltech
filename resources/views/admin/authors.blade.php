@@ -11,10 +11,10 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <button href="{{route('authors.create')}}" type="button" class="btn btn-success">
+                            <a href="{{route('authors.create')}}" type="button" class="btn btn-success">
                             <i class="fas fa-plus"></i>
                                 Tambahkan Data
-                            </button>
+                            </a>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -37,11 +37,8 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $author->name }}</td>
                                             <td>{{ $author->picture }}</td>
-                                            
                                             <td>{{ $author->news->where('is_published','1')->count() }}</td>
-                                           
                                             <td>{{ $author->updated_at }}</td>
-                                            
                                             <td>
                                             <a href="{{ route('authors.edit', [$author->id]) }}"
                                             class="btn btn-warning float-left m-1">Edit</a>

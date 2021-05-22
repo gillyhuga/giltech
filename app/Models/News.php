@@ -9,7 +9,7 @@ class News extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
+    // protected $table = 'news';
     public function authors(){
         return $this->belongsToMany('App\Models\Author');
 }
