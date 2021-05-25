@@ -14,4 +14,6 @@ class DashboardController extends Controller
         $news = News::all();		
         return view('admin/dashboard', compact('authors', 'news'));
     }
+
+    
 }

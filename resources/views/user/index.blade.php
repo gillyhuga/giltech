@@ -1,5 +1,5 @@
 @extends('user.layouts.master')
-@section('title', 'Dashboard')
+@section('title', 'Home')
 
 @section('hero')
 <div class="hero-image">
@@ -38,7 +38,7 @@
                 <article class="content">
                     <h2>{{ $content->title }}</h2>
                     <p class="author">By {{ $content->authors()->first()->name}} / {{ $content->created_at }}</p>
-                    <img class="image-content" src="assets/images/computer-1.jpg">
+                    <img class="image-content" src="/images/{{$content->picture}}">
                     <p>{{ $content->content }}</p>
                     <a href="#"
                         class="button">Selengkapnya</a>

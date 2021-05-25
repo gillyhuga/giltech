@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -37,17 +38,28 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->picture);
+
         $request->validate([
             'name' => 'required|max:100',
-            'picture' => 'required|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'address' => 'required|max:250',
+            
             ]);
+
+            $imgName = $request->picture->getClientOriginalName(). '-'.time()
+                                            .'.'.$request->picture->extension();
+            $request->picture->move(public_path('images'),$imgName);
+
+
             $data =Author::create([
                 'name' => $request->name,
-                'picture' => $request->picture,
+                'picture' => $imgName,
                 'address' => $request->address,
                 ]);
             // $data->news()->attach($request->input('news_id'));
+    
+            
             return redirect()->route('authors.index');
         
     }
@@ -86,7 +98,7 @@ class AuthorController extends Controller
     {
         $request->validate([
             'name' => 'required|max:100',
-            'picture' => 'required|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'address' => 'required|max:250',
             ]);
             Author::findOrFail($id)->update([

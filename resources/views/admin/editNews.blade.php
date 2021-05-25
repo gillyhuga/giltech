@@ -12,63 +12,52 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <form action="{{ route('news.update', [$news->id]) }}" method="POST">
+                            <form action="{{ route('news.update', [$news->id]) }}" method="POST" enctype="multipart/form-data">
                             @CSRF
                             @method('put')
                             <div class="card-body">
                             <div class="row">
 
-                            <div class="col-8">
-                            <div class="form-group">
-                            <label for="picture">Author</label>
-                            <div class="form-group">
-                            <select class="form-control" name="author"  >
-                            @foreach ($authors as $author)
-                            <option value="{{ $author->id }}" >{{ $author->name }}</option>
-                            @endforeach
-                            </select>
-                            </div>
-                            </div>
-                            </div>
 
                             <div class="col-8">
                             <div class="form-group">
-                            <label for="name">Judul Berita</label>
+                            <label for="title">Judul Berita</label>
                             <input type="text" name="title" class="form-control @error('title')
                             is-invalid @enderror" placeholder="Judul Berita" value="{{$news->title}}">
                             <small class="text-danger">@error('title') {{$message}}
                             @enderror</small>
                             </div>
                             </div>
-                            <!-- <div class="col-8">
-                            <div class="form-group">
-                            <label for="picture">Foto</label>
-                            <input type="text" name="picture" class="form-control @error('picture')
-                            is-invalid @enderror" placeholder="Supplier Number" value="{{$news->picture}}">
-                            <small class="text-danger">@error('picture') {{$message}}
-                            @enderror</small>
-                            </div>
-                            </div> -->
+                        
                             <div class="col-8">
                             <div class="form-group">
                             <label for="picture">Foto</label>
-                            <div class="form-group">
                                 <img src="{{asset('/images/'.$news->picture)}}" class="rounded float-left" class="img-fluid" alt="Gambar">
                                 <p></p>
                                 <input id="picture" type="file" name="picture" class="form-control-file @error('picture') is-invalid @enderror"  >
                                 <small class="text-danger">@error('picture') {{$message}} @enderror</small>
                             </div>
                             </div>
-                            </div>
                             <div class="col-8">
                             <div class="form-group">
-                            <label for="alamat">Content</label>
+                            <label for="content">Content</label>
                             <textarea name="content" class="form-control @error('content') is-invalid @enderror" placeholder="Content" id="exampleFormControlTextarea1" rows="3" > {{$news->content}}</textarea>
                             <small class="text-danger">@error('content') {{$message}}
                             @enderror</small>
                             </div>
                             </div>
+                            <div class="col-8">
+                            <div class="form-group">
+                            <label for="picture">Status</label>
+                            <div class="form-group">
+                            <select class="form-control" name="is_published"  >
+                            <option value="0" >Not Published</option>
+                            <option value="1" >Published</option>
+                            </select>
                             </div>
+                            </div>
+                            </div>
+                           
                             </div>
                             <!-- /.row -->
                             <div class="card-footer">

@@ -39,18 +39,26 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->picture);
+
         //return $request->get('authors');
         // $data = $request->all();
         // dd($data);
         $request->validate([
             'title' => 'required|max:100',
-            'picture' => 'required|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content' => 'required|max:250',
             ]);
+           
+            $imgName = $request->file('picture')->getClientOriginalName(). '-'.time()
+            .'.'.$request->file('picture')->extension();
+            $request->file('picture')->move(public_path('images'),$imgName);
+
             $data =News::insertGetId([
                 'title' => $request->get('title'),
-                'picture' => $request->get('picture'),
+                'picture' => $imgName,
                 'content' => $request->get('content'),
+                'is_published' => $request->get('is_published'),
                 'created_at'=> \Carbon\Carbon::now(),
                 ]);
             // $data->news()->attach($request->input('news_id'));
@@ -98,19 +106,33 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->picture);
+        //return $request->get('authors');
         $request->validate([
             'title' => 'required|max:100',
-            'picture' => 'required|max:250',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content' => 'required|max:500',
             ]);
+
+            $imgName = $request->file('picture')->getClientOriginalName(). '-'.time()
+            .'.'.$request->file('picture')->extension();
+            $request->file('picture')->move(public_path('images'),$imgName);
+
             News::findOrFail($id)->update([
             'title' => $request->title,
-            'picture' => $request->picture,
+            'picture' => $imgName,
             'content' => $request->content,
+            'is_published' => $request->is_published,
+            
             ]);
+
+            // if ($request->get('authors')){
+            //     News::findOrFail($data)
+            //     ->authors()->attach($request->get('authors'));
+            // }    
         $model = News::find($id);
         $model->touch();
-        return back()->with('success','Image Upload successfully');
+        return redirect()->route('news.index');
     }
 
     /**

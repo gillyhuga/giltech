@@ -26,6 +26,7 @@
                                                 <th>No</th>
                                                 <th>Name</th>
                                                 <th>Picture</th>
+                                                <th>Address</th>
                                                 <th>Total Published</th>
                                                 <th>Last Modified</th>
                                                 <th>Action</th>
@@ -37,6 +38,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $author->name }}</td>
                                             <td>{{ $author->picture }}</td>
+                                            <td>{{ $author->address }}</td>
                                             <td>{{ $author->news->where('is_published','1')->count() }}</td>
                                             <td>{{ $author->updated_at }}</td>
                                             <td>
