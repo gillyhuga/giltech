@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d0701816e2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
     <title>Giltech | @yield('title') </title>
 </head>
 
@@ -20,6 +21,7 @@
                     <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
                     <li class="nav_item"><a href="profile" class="nav_link">Profile</a></li>
                     <li class="nav_item"><a href="listapp" class="nav_link">List App</a></li>
+                    <li class="nav_item"><a href="admin" class="nav_link">Admin</a></li>
                     <li class="nav_item"><button class="button fa fa-moon" id="btn-dark" onclick="switchMode()"></button></li>
                 </ul>
             </div>
@@ -51,6 +53,7 @@
 @stack('css')
 <script src="{{asset('/js/main.js')}}"></script>
 <script src="{{asset('/js/darkmode.js')}}"></script>
+<script src="{{asset('/js/listapp.js')}}"></script>
 @stack('script')
 
 

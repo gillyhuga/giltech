@@ -110,7 +110,7 @@ class NewsController extends Controller
         //return $request->get('authors');
         $request->validate([
             'title' => 'required|max:100',
-            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'content' => 'required|max:500',
             ]);
 
@@ -143,7 +143,15 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::findOrFail($id)->delete();
+        $delete= News::findOrFail($id);
+
+        $file =public_path('/images/').$delete->picture;
+        if (file_exists($file)){
+
+            @unlink($file);
+        }
+
+        $delete->delete();  
         return redirect()->back();
     }
 }

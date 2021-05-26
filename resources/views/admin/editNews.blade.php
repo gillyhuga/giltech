@@ -32,10 +32,13 @@
                             <div class="col-8">
                             <div class="form-group">
                             <label for="picture">Foto</label>
-                                <img src="{{asset('/images/'.$news->picture)}}" class="rounded float-left" class="img-fluid" alt="Gambar">
-                                <p></p>
                                 <input id="picture" type="file" name="picture" class="form-control-file @error('picture') is-invalid @enderror"  >
                                 <small class="text-danger">@error('picture') {{$message}} @enderror</small>
+                            </div>
+                            </div>
+                            <div class="col-8">
+                            <div class="form-group">
+                            <img src="{{asset('/images/'.$news->picture)}}" height="100%" width="50%" class="rounded float-left" class="img-fluid" alt="Gambar">
                             </div>
                             </div>
                             <div class="col-8">

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\DashboardController;
@@ -17,13 +19,18 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+
+Route::resource('/', HomeController::class);
+Route::resource('/profile', ProfileController::class);
+Route::resource('/listapp', ListController::class);
+
+Route::resource('admin/authors', AuthorController::class);
+Route::resource('admin/news', NewsController::class);
+Route::resource('admin', DashboardController::class);
+
 // Route::get('/', function () {
 //     return view('user/index');
 //     })->name('index');
-    Route::resource('/', HomeController::class);
-    Route::resource('admin/authors', AuthorController::class);
-    Route::resource('admin/news', NewsController::class);
-    Route::resource('admin', DashboardController::class);
 
 // Route::get('/profile', function () {
 //     return view('user/profile');

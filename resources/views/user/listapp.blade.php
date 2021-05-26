@@ -35,25 +35,17 @@
             <article class="all-content">
                 <h1>Sedang Populer</h1>
                 <article class="content">
-                    <h2>Microsoft: Performa Xbox Series X Tinggal Persoalan Optimasi Saja</h2>
-                    <p>Pertempuran Microsoft dan Sony sudah dari dulu; jauh sebelum konsol terbaru mereka dirilis.
-                        Sekarang, setelah Xbox Series X dan PlayStation 5 keluar...</p>
-                    <a href="https://teknologi.info/277421/microsoft-performa-xbox-series-x-tinggal-persoalan-optimasi-saja/"
+                <?php $count = 0; ?>
+                @foreach ($news as $content)
+                @if($content->is_published == 1)
+                <?php if($count == 2) break; ?>
+                    <h2>{{ $content->title }}</h2>
+                    <p>{{ $content->content }}</p>
+                    <a href="#"
                         class="button">Selengkapnya</a>
-                </article>
-                <article class="content">
-                    <h2>Apple Watch Sekarang dapat Memutar Spotify Tanpa iPhone</h2>
-                    <p>Pengguna Apple Watch mungkin akan bersorak setelah membaca berita ini. Benar! Sekarang Anda bisa
-                        langsung...</p>
-                    <a href="https://teknologi.info/257394/apple-watch-dapat-memutar-spotify-tanpa-iphone/"
-                        class="button">Selengkapnya</a>
-                </article>
-                <article class="content">
-                    <h2>Update Windows 10 di April 2018; Apa Saja yang Baru?</h2>
-                    <p>Dengan Windows 10, Microsoft telah memfokuskan diri ­untuk menghadirkan sistem operasi yang
-                        paling modern dan paling...</p>
-                    <a href="https://teknologi.info/304106/update-windows-10-april-2018/"
-                        class="button">Selengkapnya</a>
+                <?php $count++; ?>
+                @endif
+                @endforeach
                 </article>
             </article>
             </article>

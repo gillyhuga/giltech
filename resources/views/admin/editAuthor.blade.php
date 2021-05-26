@@ -11,7 +11,7 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <form action="{{ route('authors.update', [$authors->id]) }}" method="POST">
+                            <form action="{{ route('authors.update', [$authors->id]) }}" method="POST" enctype="multipart/form-data">
                             @CSRF
                             @method('put')
                             <div class="card-body">
@@ -26,15 +26,17 @@
                             </div>
                             </div>
 
-                            
 
                             <div class="col-8">
                             <div class="form-group">
                             <label for="picture">Foto</label>
-                            <input type="text" name="picture" class="form-control @error('picture')
-                            is-invalid @enderror" placeholder="Supplier Number" value="{{$authors->picture}}">
-                            <small class="text-danger">@error('picture') {{$message}}
-                            @enderror</small>
+                                <input id="picture" type="file" name="picture" class="form-control-file @error('picture') is-invalid @enderror"  >
+                                <small class="text-danger">@error('picture') {{$message}} @enderror</small>
+                            </div>
+                            </div>
+                            <div class="col-8">
+                            <div class="form-group">
+                            <img src="{{asset('/images/'.$authors->picture)}}" height="100%" width="50%" class="rounded float-left" class="img-fluid" alt="Gambar">
                             </div>
                             </div>
                             <div class="col-8">

@@ -38,7 +38,7 @@
                                             <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $news->title }}</td>
-                                            <td>{{ $news->picture }}</td>
+                                            <td><a href="{{asset('images/'.$news->picture )}}">Lihat Gambar</a></td>
                                             <td>{{ $news->content }}</td>
                                             <td>
                                             @if($news->is_published == 0)

@@ -37,7 +37,7 @@
                                             <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $author->name }}</td>
-                                            <td>{{ $author->picture }}</td>
+                                            <td><a href="{{asset('images/'.$author->picture )}}">Lihat Gambar</a></td>
                                             <td>{{ $author->address }}</td>
                                             <td>{{ $author->news->where('is_published','1')->count() }}</td>
                                             <td>{{ $author->updated_at }}</td>

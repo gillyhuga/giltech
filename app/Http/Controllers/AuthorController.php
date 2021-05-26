@@ -98,12 +98,18 @@ class AuthorController extends Controller
     {
         $request->validate([
             'name' => 'required|max:100',
-            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'address' => 'required|max:250',
             ]);
+
+
+            $imgName = $request->picture->getClientOriginalName(). '-'.time()
+            .'.'.$request->picture->extension();
+            $request->picture->move(public_path('images'),$imgName);
+
             Author::findOrFail($id)->update([
             'name' => $request->name,
-            'picture' => $request->picture,
+            'picture' => $imgName,
             'address' => $request->address,
             ]);
             $model = Author::find($id);
@@ -120,7 +126,14 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        Author::findOrFail($id)->delete();
+        $delete= Author::findOrFail($id);
+        $file =public_path('/images/').$delete->picture;
+        if (file_exists($file)){
+
+            @unlink($file);
+        }
+
+        $delete->delete();
         return redirect()->back();
     }
 }

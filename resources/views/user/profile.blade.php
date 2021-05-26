@@ -15,7 +15,7 @@
                 <h1>My Profile</h1>
                 <article class="content  category-sidebar">
                 <div style="text-align: center;">
-                        <img class="image-profile" src="assets/images/profile.jpg">
+                        <img class="image-profile" src="/images/{{$authors->first()->picture}}"  >
                     </div>
                 </article>
             </article>
@@ -28,8 +28,7 @@
             <article class="all-content">
                 <h1>a bit about me:</h1>
                 <article class="content">
-                    
-                    <h2>Hi,I'am <strong>Gilly Huga Anargya</strong></h2>
+                    <h2>Hi,I'am {{$authors->first()->name}} </h2>
                     <p>I'm a software engineer, with a strong interest in technology and good aesthetics.
                         But i think you've probably figured that out by now.
                         <br>

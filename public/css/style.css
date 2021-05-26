@@ -270,7 +270,7 @@ a {
 }
 
 .form {
-  width: 85%;
+  width: 80%;
   outline: none;
   border: 1px solid var(--primary-color);
   border-radius: 50px;
