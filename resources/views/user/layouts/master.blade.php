@@ -49,7 +49,7 @@
     </footer>
 
 </body>
-<link rel="stylesheet" href="{{asset('/css/style.css')}}">
+<link rel="stylesheet" href="css/style.css">
 @stack('css')
 <script src="{{asset('/js/main.js')}}"></script>
 <script src="{{asset('/js/darkmode.js')}}"></script>
