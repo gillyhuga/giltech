@@ -109,16 +109,16 @@
 <link rel="stylesheet" href="css/style.css">
 @stack('css')
 
-<script src="{{asset('/js/main.js')}}"></script>
-<script src="{{asset('/js/main.js')}}"></script>
-<script src="{{asset('/vendor/aos/aos.js')}}"></script>
-<script src="{{asset('/vendor/purecounter/purecounter.js')}}"></script>
-<script src="{{asset('/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('/vendor/glightbox/js/glightbox.min.js')}}"></script>
-<script src="{{asset('/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('/vendor/swiper/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('/vendor/php-email-form/validate.js')}}"></script>
-<script src="{{asset('/js/main.js')}}"></script>
+<script src="{{secure_asset('/js/main.js')}}"></script>
+<script src="{{secure_asset('/js/main.js')}}"></script>
+<script src="{{secure_asset('/vendor/aos/aos.js')}}"></script>
+<script src="{{secure_asset('/vendor/purecounter/purecounter.js')}}"></script>
+<script src="{{secure_asset('/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{secure_asset('/vendor/glightbox/js/glightbox.min.js')}}"></script>
+<script src="{{secure_asset('/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{secure_asset('/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{secure_asset('/vendor/php-email-form/validate.js')}}"></script>
+<script src="{{secure_asset('/js/main.js')}}"></script>
 <!-- <script src="{{asset('/js/darkmode.js')}}"></script>
 <script src="{{asset('/js/listapp.js')}}"></script> -->
 @stack('script')
