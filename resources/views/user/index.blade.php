@@ -395,7 +395,7 @@
                 <li class="na">Free CDN</li>
               </ul>
               <div class="btn-wrap">
-                <a href="https://api.whatsapp.com/send/?phone=6282257749889&text&app_absent=0" class="btn-buy">Order Sekarang</a>
+                <a href="https://api.whatsapp.com/send/?phone=628100000000&text&app_absent=0" class="btn-buy">Order Sekarang</a>
               </div>
             </div>
           </div>
@@ -415,7 +415,7 @@
                 <li class="na">Free CDN</li>
               </ul>
               <div class="btn-wrap">
-                <a href="https://api.whatsapp.com/send/?phone=6282257749889&text&app_absent=0" class="btn-buy">Order Sekarang</a>
+                <a href="https://api.whatsapp.com/send/?phone=628100000000&text&app_absent=0" class="btn-buy">Order Sekarang</a>
               </div>
             </div>
           </div>
@@ -435,7 +435,7 @@
                 <li>Free CDN</li>
               </ul>
               <div class="btn-wrap">
-                <a href="https://api.whatsapp.com/send/?phone=6282257749889&text&app_absent=0" class="btn-buy">Order Sekarang</a>
+                <a href="https://api.whatsapp.com/send/?phone=628100000000&text&app_absent=0" class="btn-buy">Order Sekarang</a>
               </div>
             </div>
           </div>
@@ -547,17 +547,17 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>Jl. Dr Wahidin 40C<br>Malang</p>
+                <p>Malang<br>Malang</p>
               </div>
 
               <div>
                 <i class="ri-mail-send-line"></i>
-                <p>gilly.huga@gmail.com</p>
+                <p>hi@giltech.com</p>
               </div>
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p>+62 0822 5774 9889</p>
+                <p>+62 0810 0000 0000</p>
               </div>
 
             </div>
